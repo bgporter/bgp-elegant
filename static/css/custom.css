@@ -22,6 +22,8 @@ code, pre, .highlight pre {
     font-family: 'Fira Code', monospace;
     font-feature-settings: "liga" 1, "calt" 1;
     font-variant-ligatures: common-ligatures;
+    text-align: left !important;
+    text-justify: none !important;
 }
 
 /* Recent posts styling */
