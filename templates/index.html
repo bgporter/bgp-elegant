@@ -109,7 +109,13 @@
                         {% endif %}
                     </a>
                     {% if RECENT_ARTICLE_SUMMARY %}
-                    <p>{{ article.summary }}</p>
+                    <div class="article-summary">{{ article.summary }}</div>
+                    {% endif %}
+                    {% if article.statistics %}
+                    {% if article.statistics['read_mins'] > 4 %}
+                    <div class="recent-posts-posted">{{ article.statistics['wc'] }} words, ~{{
+                        article.statistics['read_mins'] }} min read</div>
+                    {% endif %}
                     {% endif %}
                     <div class="recent-posts-posted">
                         posted in
