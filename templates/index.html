@@ -118,9 +118,15 @@
                     {% endif %}
                     {% endif %}
                     <div class="recent-posts-posted">
-                        posted in
+                        category:
                         <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ article.category.slug }}-ref">{{ article.category
                             }}</a>
+                        {% if article.tags %}
+                        | tags:
+                        {% for tag in article.tags %}
+                        <a href="{{ SITEURL }}/{{ TAGS_URL }}#{{ tag.slug }}-ref">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                        {% endif %}
                         <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">published {{
                             article.locale_date
                             }}</time>
