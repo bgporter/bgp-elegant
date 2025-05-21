@@ -46,6 +46,13 @@
             {{ comments_section(page) }}
         </div>
     </div>
+    {% if page.modified %}
+    <div class="row-fluid">
+        <div class="span8 offset2">
+            <small class="text-muted">Last Updated: {{ page.modified.strftime('%a %d %B %Y') }}</small>
+        </div>
+    </div>
+    {% endif %}
     </article>
     {% include '_includes/photoswipe.html' %}
     {% endblock content %}
