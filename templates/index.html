@@ -130,7 +130,7 @@
                         <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">published {{
                             article.locale_date
                             }}</time>
-                        {% if article.modified %}
+                        {% if article.modified and article.modified.strftime('%Y-%m-%d') != article.date.strftime('%Y-%m-%d') %}
                         <br />
                         <time itemprop="dateModified" datetime="{{ article.modified.isoformat() }}"> updated {{
                             article.locale_modified }}</time>
