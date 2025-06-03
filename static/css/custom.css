@@ -125,3 +125,8 @@ sup {
     position: relative;
     top: -0.5em;
 }
+
+.article-content {
+    text-align: left !important;
+    text-justify: none !important;
+}
