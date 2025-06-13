@@ -111,6 +111,13 @@
                     {% if RECENT_ARTICLE_SUMMARY %}
                     <div class="article-summary">{{ article.summary }}</div>
                     {% endif %}
+                    
+                    {% if article.featured_image %}
+                    <div class="featured-image">
+                        <img src="{{ article.featured_image }}" alt="Featured image for {{ article.title }}" />
+                    </div>
+                    {% endif %}
+                    
                     {% if article.statistics %}
                     {% if article.statistics['read_mins'] > 4 %}
                     <div class="recent-posts-posted">{{ article.statistics['wc'] }} words, ~{{

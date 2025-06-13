@@ -130,3 +130,29 @@ sup {
     text-align: left !important;
     text-justify: none !important;
 }
+
+/* Diff styling */
+.diff {
+    font-family: 'Fira Code', monospace;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin: 0 2px;
+    color: inherit;  /* Inherit text color from parent */
+    white-space: pre-wrap;       /* Preserve whitespace and wrap */
+    word-wrap: break-word;       /* Break long words if needed */
+    overflow-wrap: break-word;   /* Modern browsers */
+    max-width: 100%;            /* Ensure it doesn't overflow container */
+}
+
+.diff-add {
+    background-color: rgba(152, 195, 121, 0.2);  /* Light green background */
+    border-left: 3px solid #98c379;
+    padding-left: 8px;
+}
+
+.diff-delete {
+    background-color: rgba(224, 108, 117, 0.2);  /* Light red background */
+    border-left: 3px solid #e06c75;
+    padding-left: 8px;
+    text-decoration: line-through;
+}
