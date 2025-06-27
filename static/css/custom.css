@@ -156,3 +156,14 @@ sup {
     padding-left: 8px;
     text-decoration: line-through;
 }
+
+/* Custom blockquote styling for light blue theme */
+.article-content blockquote {
+    background: #ffffff !important;
+    border-left: 5px solid #4a90e2 !important;
+}
+
+.article-content blockquote:before,
+.article-content blockquote:after {
+    color: #4a90e2 !important;
+}
