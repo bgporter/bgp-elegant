@@ -167,3 +167,17 @@ sup {
 .article-content blockquote:after {
     color: #4a90e2 !important;
 }
+
+/* Custom admonition styling to match site's red accent theme */
+div.warning,
+div.caution,
+div.attention {
+    color: #d32f2f !important;
+    background-color: #ffebee !important;
+}
+
+div.warning p.admonition-title,
+div.caution p.admonition-title,
+div.attention p.admonition-title {
+    background-color: #d32f2f !important;
+}
