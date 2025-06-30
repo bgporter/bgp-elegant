@@ -181,3 +181,16 @@ div.caution p.admonition-title,
 div.attention p.admonition-title {
     background-color: #d32f2f !important;
 }
+
+/* Footnotes styling */
+.simple-footnotes {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1em;
+    margin-top: 2em;
+    font-size: 0.85em !important;
+    line-height: 1.4;
+}
+
+.simple-footnotes li {
+    margin-bottom: 0.5em;
+}
