@@ -194,3 +194,15 @@ div.attention p.admonition-title {
 .simple-footnotes li {
     margin-bottom: 0.5em;
 }
+
+/* Image caption styling */
+.img-caption {
+    font-family: 'Merriweather', serif;
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-top: 0;
+    color: #666;
+    text-align: left;
+}
