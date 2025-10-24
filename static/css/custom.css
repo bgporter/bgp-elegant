@@ -182,8 +182,9 @@ div.attention p.admonition-title {
     background-color: #d32f2f !important;
 }
 
-/* Footnotes styling */
-.simple-footnotes {
+/* Footnotes styling - works with both div and ol containers */
+.simple-footnotes,
+ol.simple-footnotes {
     border-top: 1px solid #e0e0e0;
     padding-top: 1em;
     margin-top: 2em;
@@ -191,7 +192,46 @@ div.attention p.admonition-title {
     line-height: 1.4;
 }
 
-.simple-footnotes li {
+.simple-footnotes li,
+ol.simple-footnotes li {
+    margin-bottom: 0.5em;
+}
+
+/* Add "Footnotes" heading using CSS */
+ol.simple-footnotes::before,
+.simple-footnotes::before,
+ol.footnote::before,
+ol.footnotes::before,
+div.footnote::before,
+div.footnotes::before {
+    content: "Footnotes";
+    display: block;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.53em; /* Slightly larger to match h3 */
+    font-weight: 500;
+    margin-bottom: 0.65em;
+    margin-top: -0.3em; /* Adjust for the padding-top */
+    color: #333;
+}
+
+/* Standard footnotes styling */
+.footnote,
+.footnotes,
+div.footnote,
+ol.footnote,
+ol.footnotes {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1em;
+    margin-top: 2em;
+    font-size: 0.85em !important;
+    line-height: 1.4;
+}
+
+.footnote li,
+.footnotes li,
+div.footnote li,
+ol.footnote li,
+ol.footnotes li {
     margin-bottom: 0.5em;
 }
 
