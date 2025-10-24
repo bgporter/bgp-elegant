@@ -97,6 +97,7 @@ const minifyJS = () => {
     "static/js/create-instagram-gallery.js",
     "static/js/copy-to-clipboard.js",
     "static/js/lunr-search-result.js",
+    "static/js/dark-mode-toggle.js",
     "!static/js/elegant.prod.9e9d5ce754.js",
   ])
     .pipe(concat("elegant.prod.9e9d5ce754.js"))
