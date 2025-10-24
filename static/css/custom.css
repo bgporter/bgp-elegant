@@ -1,12 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Fira+Code:wght@400;500&display=swap');
 
+/* CSS Custom Properties for Dark Mode */
+:root {
+    --bg-main: #F0F8FF;
+    --bg-content: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+    --link-color: #0066cc;
+    --navbar-bg: #ffffff;
+    --navbar-border: #e5e5e5;
+    --blockquote-bg: #ffffff;
+    --blockquote-border: #4a90e2;
+    --warning-bg: #ffebee;
+    --warning-text: #d32f2f;
+    --table-row-odd: #ebebeb;
+    --table-row-even: transparent;
+    --code-bg: #f7f7f9;
+    --code-border: #e1e1e8;
+    --code-text: #d14;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #1a1a1a;
+        --bg-content: #2d2d2d;
+        --text-primary: #e0e0e0;
+        --text-secondary: #b0b0b0;
+        --text-muted: #999999;
+        --border-color: #444444;
+        --link-color: #66b3ff;
+        --navbar-bg: #242424;
+        --navbar-border: #333333;
+        --blockquote-bg: #2a2a2a;
+        --blockquote-border: #5aa5ff;
+        --warning-bg: #4a2020;
+        --warning-text: #ff6b6b;
+        --table-row-odd: #3a3a3a;
+        --table-row-even: transparent;
+        --code-bg: #2a2a2a;
+        --code-border: #404040;
+        --code-text: #ff9999;
+    }
+}
+
+/* Allow manual override */
+body.light-mode {
+    --bg-main: #F0F8FF;
+    --bg-content: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+    --link-color: #0066cc;
+    --navbar-bg: #ffffff;
+    --navbar-border: #e5e5e5;
+    --blockquote-bg: #ffffff;
+    --blockquote-border: #4a90e2;
+    --warning-bg: #ffebee;
+    --warning-text: #d32f2f;
+    --table-row-odd: #ebebeb;
+    --table-row-even: transparent;
+    --code-bg: #f7f7f9;
+    --code-border: #e1e1e8;
+    --code-text: #d14;
+}
+
+body.dark-mode {
+    --bg-main: #1a1a1a;
+    --bg-content: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-muted: #999999;
+    --border-color: #444444;
+    --link-color: #66b3ff;
+    --navbar-bg: #242424;
+    --navbar-border: #333333;
+    --blockquote-bg: #2a2a2a;
+    --blockquote-border: #5aa5ff;
+    --warning-bg: #4a2020;
+    --warning-text: #ff6b6b;
+    --table-row-odd: #3a3a3a;
+    --table-row-even: transparent;
+    --code-bg: #2a2a2a;
+    --code-border: #404040;
+    --code-text: #ff9999;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cabin', sans-serif;
+    color: var(--text-primary);
 }
 
 .page-header {
     border-bottom: 2px solid red;
-    color:black;
+    color: var(--text-primary);
     margin: 10px 0 30px 0;
 }
 
@@ -14,8 +103,14 @@ header.page-header h1 {
     font-family: 'Cabin', sans-serif !important;
 }
 
-body, .article-content, div.recent-posts p {
+body {
     font-family: 'Merriweather', serif;
+    color: var(--text-primary);
+}
+
+.article-content, div.recent-posts p {
+    font-family: 'Merriweather', serif;
+    color: var(--text-primary);
 }
 
 code, pre, .highlight pre {
@@ -28,7 +123,7 @@ code, pre, .highlight pre {
 
 /* Main content background */
 #content {
-    background-color: #F0F8FF;
+    background-color: var(--bg-main);
 }
 
 /* Atom Dark theme colors for code blocks */
@@ -113,7 +208,7 @@ code, pre, .highlight pre {
 .recent-posts .article-summary code {
     font-size: 0.9em !important;
     line-height: 1.5;
-    color: #555;
+    color: var(--text-secondary);
     margin: 0.5em 0;
 }
 
@@ -157,35 +252,35 @@ sup {
     text-decoration: line-through;
 }
 
-/* Custom blockquote styling for light blue theme */
+/* Custom blockquote styling */
 .article-content blockquote {
-    background: #ffffff !important;
-    border-left: 5px solid #4a90e2 !important;
+    background: var(--blockquote-bg) !important;
+    border-left: 5px solid var(--blockquote-border) !important;
 }
 
 .article-content blockquote:before,
 .article-content blockquote:after {
-    color: #4a90e2 !important;
+    color: var(--blockquote-border) !important;
 }
 
 /* Custom admonition styling to match site's red accent theme */
 div.warning,
 div.caution,
 div.attention {
-    color: #d32f2f !important;
-    background-color: #ffebee !important;
+    color: var(--warning-text) !important;
+    background-color: var(--warning-bg) !important;
 }
 
 div.warning p.admonition-title,
 div.caution p.admonition-title,
 div.attention p.admonition-title {
-    background-color: #d32f2f !important;
+    background-color: var(--warning-text) !important;
 }
 
 /* Footnotes styling - works with both div and ol containers */
 .simple-footnotes,
 ol.simple-footnotes {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     padding-top: 1em;
     margin-top: 2em;
     font-size: 0.85em !important;
@@ -211,7 +306,7 @@ div.footnotes::before {
     font-weight: 500;
     margin-bottom: 0.65em;
     margin-top: -0.3em; /* Adjust for the padding-top */
-    color: #333;
+    color: var(--text-primary);
 }
 
 /* Standard footnotes styling */
@@ -220,7 +315,7 @@ div.footnotes::before {
 div.footnote,
 ol.footnote,
 ol.footnotes {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     padding-top: 1em;
     margin-top: 2em;
     font-size: 0.85em !important;
@@ -243,6 +338,146 @@ ol.footnotes li {
     margin-top: 0;
     margin-bottom: 1em;
     padding-top: 0;
-    color: #666;
+    color: var(--text-muted);
     text-align: left;
+}
+
+/* Dark mode toggle button styling */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: var(--text-primary);
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
+/* Dark mode support for navbar and global elements */
+.navbar-inner {
+    background-color: var(--navbar-bg) !important;
+    background-image: none !important;
+    border-bottom: 1px solid var(--navbar-border) !important;
+}
+
+.navbar .brand,
+.navbar .nav > li > a {
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
+    color: var(--text-secondary) !important;
+    background-color: transparent !important;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+    color: var(--text-primary) !important;
+    background-color: rgba(128, 128, 128, 0.1) !important;
+}
+
+/* Mobile navbar toggle */
+.navbar .btn-navbar {
+    background-color: var(--navbar-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.navbar .btn-navbar .icon-bar {
+    background-color: var(--text-primary) !important;
+}
+
+/* Articles inherit #content background - no separate background needed */
+
+/* Override Bootstrap/Elegant default link colors */
+a {
+    color: var(--link-color) !important;
+}
+
+a:hover,
+a:focus {
+    color: var(--link-color) !important;
+    opacity: 0.8;
+}
+
+a:visited {
+    color: var(--link-color) !important;
+    opacity: 0.9;
+}
+
+/* Ensure search input adapts to dark mode */
+.navbar-search .search-query {
+    background-color: var(--bg-content);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.navbar-search .search-query::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+/* Ensure all content areas use proper backgrounds */
+.article-content,
+.span8.article-content,
+.span8.offset2.article-content,
+#article-sidebar,
+.span2 {
+    background-color: transparent !important;
+}
+
+/* Fix tags and other elements with hardcoded backgrounds */
+.list-of-tags a {
+    background-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.list-of-tags a:hover {
+    background-color: var(--text-secondary) !important;
+    color: var(--bg-content) !important;
+}
+
+/* Fix literal/code inline elements */
+.literal {
+    background-color: rgba(128, 128, 128, 0.1) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Fix inline code elements for dark mode (but not code blocks) */
+code:not(pre code) {
+    background-color: var(--code-bg) !important;
+    border-color: var(--code-border) !important;
+    color: var(--code-text) !important;
+}
+
+/* Fix table alternating row backgrounds for dark mode */
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+    background-color: var(--table-row-odd) !important;
+}
+
+table tbody > tr:nth-child(even) > td,
+table tbody > tr:nth-child(even) > th {
+    background-color: var(--table-row-even) !important;
+}
+
+/* Ensure table text is readable */
+table {
+    color: var(--text-primary);
+}
+
+table th {
+    color: var(--text-primary);
+    border-color: var(--border-color) !important;
+}
+
+table td {
+    color: var(--text-primary);
+    border-color: var(--border-color) !important;
 }
